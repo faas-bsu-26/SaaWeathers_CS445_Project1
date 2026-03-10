@@ -1,47 +1,20 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
+<script setup>
+import { ref } from 'vue'
+
+import LoginPage from './components/loginPage.vue'
+import HomePage from './components/homePage.vue'
+//import LockDetails from './components/LockDetails.vue'
+
+const page = ref('login')
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="app">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <LoginPage v-if= "page==='login'" @login="page ='home'"/>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <HomePage v-if= "page==='home'"/>
+
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
