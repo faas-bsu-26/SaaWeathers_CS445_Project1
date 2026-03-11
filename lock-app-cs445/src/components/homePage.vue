@@ -6,10 +6,7 @@ import { ref } from 'vue'
 const emit = defineEmits(['openLock'])
 
 const locks = ref([
-    'Front Door',
-    'Garage',
-    'Office',
-    'Back Door'
+    'Front Door'
 ])
 </script>
 
@@ -19,7 +16,10 @@ const locks = ref([
 
         <div class="header">
             DK
-            <img src="/Users/kenxn/Downloads/monster-2.png" alt="Logo" />
+            <button class="settingsDropdown">
+                <img src="/Users/kenxn/Downloads/dropdown_button_white.jpg" alt="Dropdown" />
+
+            </button>
         </div>
 
         <h3>Welcome, Username</h3>
@@ -40,20 +40,28 @@ const locks = ref([
 
 .phone{
     width:300px;
-    margin:auto;
+    margin: auto;
+    height:600px;
+    text-align:center;
+    outline: 1px solid silver;
+    outline-width: 3px;
+    border-radius: 32px;
+    background: white;
 }
 
 .header{
     background:purple;
     color:white;
     padding:15px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
 }
 
 .header img {
     padding: 10px;
-    width: 50px;               /* adjust image size */
+    width: 50px;               
     height: 50px;
-    object-fit: contain;       /* keep aspect ratio */
+    object-fit: contain;       
 }
 
 .lock{
